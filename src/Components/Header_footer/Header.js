@@ -5,6 +5,8 @@ import Button from '@material-ui/core/Button';
 
 import { Link } from 'react-router-dom';
 
+import { UtdLogo } from '../ui/icons';
+
 class Header extends Component {
   render(){
     return (
