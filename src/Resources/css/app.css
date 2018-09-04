@@ -13,6 +13,14 @@ a {
   display: inline-block;
 }
 
+.bck_red {
+  background: #ad0008;
+}
+
+.bck_lred {
+  background: #ffd8da;
+}
+
 .img_cover {
   background-size: cover !important;
 }
@@ -100,6 +108,7 @@ button {
   text-align: center;
 }
 
+
 /* HEADER & FOOTER STYLES */
 footer {
   text-align: center;
@@ -115,3 +124,36 @@ footer .img_cover{
 footer .footer_discl {
    margin: 10px 0px;
 }
+
+
+/* Featured Components Styling */
+.featured-wrapper {
+  margin: 0 auto;
+  width: 1280px;
+  margin-top: 90px;
+  height: 800px;
+  overflow: hidden;
+}
+
+.featured-stripes {
+  position: relative;
+}
+
+.featured_text {
+  position: relative;
+  font-family: 'Righteous', cursive;
+}
+
+.featured_stripes .stripe {
+  width: 230px;
+  height: 1200px;
+  position: absolute;
+}
+
+.featured_number {
+  font-size: 270px;
+  color: #ffffff;
+  transform: translate(260px,170px);
+  position: absolute;
+}
+
