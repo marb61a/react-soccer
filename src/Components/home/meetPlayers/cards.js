@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 
-class MeetPlayers extends Component {
+class HomeCards extends Component {
   state = {
-    show: false
+    cards: [
+      
+    ]
   };
 
   render() {
@@ -14,4 +16,4 @@ class MeetPlayers extends Component {
   }
 }
 
-export default MeetPlayers;
+export default HomeCards;
