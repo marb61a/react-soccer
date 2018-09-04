@@ -7,7 +7,7 @@ import Promotion from './promotion';
 
 const Home = () => {
     return (
-      <div className="">
+      <div className="bck_red">
         <Featured/>
         <Matches/>
         <MeetPlayers/>

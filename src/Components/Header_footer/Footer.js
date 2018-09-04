@@ -3,7 +3,7 @@ import { UtdLogo } from '../ui/icons';
 
 const Footer = () => {
   return (
-    <footer className="">
+    <footer className="bck_red">
       <div className="footer_logo">
           <UtdLogo 
             width="70px"

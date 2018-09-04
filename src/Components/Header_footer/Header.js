@@ -16,7 +16,7 @@ class Header extends Component {
           backgroundColor:'#f23c24',
           boxShadow: 'none',
           padding:'10px 0',
-          borderBottom: '2px solid #00285e'
+          borderBottom: '2px solid #000000'
         }}
       >
         <Toolbar style={{display:'flex'}}>
