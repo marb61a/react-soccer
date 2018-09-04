@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Fade from 'react-reveal/Fade';
 
 import FormField from '../../ui/formFields';
 import { validate } from '../../ui/misc';
@@ -26,11 +27,24 @@ class Enroll extends Component {
     }
   };
 
+  submitForm(event) {
+    event.preventDefault();
+
+    let dataToSubmit = {};
+    let formIsValid = true;
+  } 
+
   render() {
     return (
-      <div>
-        
-      </div>
+      <Fade>
+        <div className="enroll_wrapper">
+            <form onSubmit={ (event)=> this.submitForm(event) }>
+              <div>
+              
+              </div>
+            </form>
+        </div>
+      </Fade>
     );
   }
 }
