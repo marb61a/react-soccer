@@ -39,7 +39,10 @@ class Enroll extends Component {
       <Fade>
         <div className="enroll_wrapper">
             <form onSubmit={ (event)=> this.submitForm(event) }>
-              <div>
+              <div className="enroll_title">
+                Enter Your Email
+              </div>
+              <div className="enroll_input">
               
               </div>
             </form>
