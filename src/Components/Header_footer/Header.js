@@ -13,7 +13,10 @@ class Header extends Component {
       <AppBar
         position="fixed"
         style={{
-
+          backgroundColor:'#f23c24',
+          boxShadow: 'none',
+          padding:'10px 0',
+          borderBottom: '2px solid #00285e'
         }}
       >
         <Toolbar style={{display:'flex'}}>
@@ -35,3 +38,5 @@ class Header extends Component {
     );
   }
 }
+
+export default Header;
