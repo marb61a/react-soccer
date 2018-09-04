@@ -22,7 +22,12 @@ class Header extends Component {
         <Toolbar style={{display:'flex'}}>
           <div style={{ flexGrow: 1 }}>
             <div className="header_logo">
-            
+              <UtdLogo 
+                link={true}
+                linkTo="/"
+                width="70px"
+                height="70px"
+              />
             </div>
           </div>
 
