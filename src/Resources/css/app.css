@@ -126,7 +126,7 @@ footer .footer_discl {
 }
 
 
-/* Featured Components Styling */
+/* FEATURED COMPONENTS STYLING */
 .featured-wrapper {
   margin: 0 auto;
   width: 1280px;
@@ -135,7 +135,7 @@ footer .footer_discl {
   overflow: hidden;
 }
 
-.featured-stripes {
+.featured_stripes {
   position: relative;
 }
 
@@ -157,3 +157,28 @@ footer .footer_discl {
   position: absolute;
 }
 
+.featured_player {
+  width: 500px;
+  height: 500px;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  position: absolute;
+}
+
+.featured_first {
+  position: absolute;
+  background: #0e1731;
+  color: #ffffff;
+  font-size: 92px;
+  text-transform: uppercase;
+  padding: 0px 20px;
+}
+
+.featured_second {
+  position: absolute;
+  background: #0e1731;
+  color: #ffffff;
+  font-size: 92px;
+  text-transform: uppercase;
+  padding: 0px 20px;
+}

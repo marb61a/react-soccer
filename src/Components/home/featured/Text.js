@@ -35,7 +35,9 @@ class Text extends Component {
 
   render(){
     return (
-      <div>Text</div>
+      <div className="featured_text">
+        { this.animatePlayer() }
+      </div>
     )
   }
 }
