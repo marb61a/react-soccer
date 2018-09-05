@@ -39,9 +39,38 @@ class Stripes extends Component {
           left:0,
           rotate:0,
           top:0
-      }}
+        }}
+        enter={{
+          background: [stripe.background],
+          opacity: [1],
+          left:[stripe.left],
+          rotate:[stripe.rotate],
+          top:[stripe.top],
+          timing: {
+            delay: stripe.delay,
+            duration: 200,
+            ease: easePolyOut
+          },
+          events: {
+            end(){
+              console.log('animation finished')
+            }
+          }
+        }}
       >
-      
+        { ({ opacity, left, rotate, top, background }) => {
+          return (
+            <div
+              className="stripe"
+              style={{
+                background,
+                opacity,
+                transform: `rotate(${rotate}deg) translate(${left}px,${top}px)`
+              }}
+            >
+            </div>
+          );
+        } }
       </Animate>
     ))
   );
