@@ -14,11 +14,21 @@ class Blocks extends Component {
 
   showMatches = (matches) => (
     matches ? 
-    matches.map() :
+    matches.map( (match) => (
+      <Slide bottom key={id}>
+        <div className="item">
+          <div className="wrapper">
+            <MatchesBlock match={match}/>
+          </div>
+        </div>
+      </Slide>
+    )) :
     null 
   );
 
   render() {
+    console.log(this.state);
+
     return (
       <div className="home_matches">
         { this.showMatches(this.state.matches) }
