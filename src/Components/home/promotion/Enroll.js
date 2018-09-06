@@ -41,7 +41,9 @@ class Enroll extends Component {
     if(formIsValid){
 
     } else {
-      
+      this.setState({
+        formError: true
+      });
     }
   } 
 
