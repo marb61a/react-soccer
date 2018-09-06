@@ -5,21 +5,21 @@ class Stripes extends Component {
   state = { 
     stripes: [
       {
-        background:'#98c5e9',
+        background:'#b20e26',
         left: 120,
         rotate: 25,
         top: -260 ,
         delay: 0
       },
       {
-        background:'#ffffff',
+        background:'#000000',
         left: 360,
         rotate: 25,
         top: -397,
         delay: 200
       },
       {
-        background:'#98c5e9',
+        background:'#b20e26',
         left: 600,
         rotate: 25,
         top: -498,

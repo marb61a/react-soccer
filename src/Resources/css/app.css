@@ -66,7 +66,7 @@ button {
 }
 
 .success_label {
-  color: #98c5e9;
+  color: #F44336;
   font-weight: 600;
   margin: 10px 0px;
 }
@@ -127,7 +127,7 @@ footer .footer_discl {
 
 
 /* FEATURED COMPONENTS STYLING */
-.featured-wrapper {
+.featured_wrapper {
   margin: 0 auto;
   width: 1280px;
   margin-top: 90px;
@@ -182,3 +182,29 @@ footer .footer_discl {
   text-transform: uppercase;
   padding: 0px 20px;
 }
+
+
+/* MATCHES HOME STYLING */
+.home_matches_wrapper {
+  background: #F44336;
+  margin-top:9px;
+  padding: 50px 0px;
+}
+
+.home_matches_wrapper .home_matches {
+  flex-wrap: wrap;
+  display: flex;
+  margin-top: 60px;
+}
+
+.home_matches_wrapper .home_matches .item {
+  width: 50%;
+  margin: 35px 0px;
+}
+
+.home_matches_wrapper .home_matches .item .wrapper {
+  padding-right:30px;
+}
+
+
+/* MATCHES BLOCK STYLING*/
