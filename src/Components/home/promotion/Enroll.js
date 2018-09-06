@@ -32,6 +32,17 @@ class Enroll extends Component {
 
     let dataToSubmit = {};
     let formIsValid = true;
+
+    for (let key in this.state.formdata) {
+      dataToSubmit[key] = this.state.formdata[key].value;
+      formIsValid = this.state.formdata[key].valid && formIsValid;
+    }
+
+    if(formIsValid){
+
+    } else {
+      
+    }
   } 
 
   render() {
@@ -43,7 +54,29 @@ class Enroll extends Component {
                 Enter Your Email
               </div>
               <div className="enroll_input">
-              
+                <FormField 
+                  id={'email'}
+                  formdata={this.state.formdata.email}
+                  change={(element)=> this.updateForm(element)}
+                />
+                {
+                  this.state.formError ?
+                  <div className="error_label">
+                    Something is wrong, try again.
+                  </div> :
+                  null
+                }
+                <div className="success_label">
+                  {this.state.formSuccess}
+                </div>
+                <button onClick={(event)=> this.submitForm(event)}>
+                  Enroll
+                </button>
+                <div className="enroll_disc">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                  sed do eiusmod tempor incididunt ut labore et dolore magna 
+                  aliqua.
+                </div>
               </div>
             </form>
         </div>
