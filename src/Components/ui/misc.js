@@ -27,6 +27,16 @@ export const Tag = (props) => {
   }
 };
 
+export const reversedArray = (actualArray) => {
+  let reversedArray = [];
+
+  for(let i = actualArray.length -1; i >= 0; i--){
+    reversedArray.push(actualArray[i]);
+  } 
+  
+  return reversedArray;
+}
+
 export const validate = (element) => {
   let error = ['true', ''];
 
