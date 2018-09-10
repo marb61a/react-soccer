@@ -7,9 +7,9 @@ export const UtdLogo = (props) => {
   const template = <div
     className="img_cover"
     style={{
-    width: props.width,
-    height: props.height,
-    background:`url(${mcitylogo}) no-repeat`
+      width: props.width,
+      height: props.height,
+      background:`url(${mcitylogo}) no-repeat`
     }}
   >
   </div>
