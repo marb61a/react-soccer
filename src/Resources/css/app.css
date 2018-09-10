@@ -343,3 +343,44 @@ footer .footer_discl {
 .match_filters .cont {
   display: flex;
 }
+
+
+/* MATCHES BLOCK STYLING */
+.home_meetplayers {
+  background: #ffffff;
+}
+
+.home_meetplayers_wrapper {
+  padding-bottom: 100px;
+  min-height: 600px;
+}
+
+.home_meetplayers .home_card_wrapper {
+  position: absolute;
+  float: left;
+  width: 630px;
+  min-height: 600px;
+}
+
+.home_meetplayers .home_text_wrapper {
+  float: right;
+  min-height: 390px;
+}
+
+/* PLAYER CARDS */
+.player_card_wrapper {
+  background: #ffffff;
+  border: 1px solid #ececec;
+  width: 300px;
+  padding: 10px 10px 20px 10px;
+  font-family: 'Righteous';
+}
+
+.player_card_wrapper .player_card_thmb {
+  border: 1px solid #eeeeee;
+  width:100%;
+  height:250px;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: contain !important;
+}
