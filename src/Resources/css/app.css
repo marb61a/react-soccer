@@ -295,3 +295,51 @@ footer .footer_discl {
 .match_box_big .block .result {
   font-weight: 500;
 }
+
+.block_wrapper .nfo {
+  border-left: 1px solid #fa95ab;
+  height: 102px;
+  padding-left: 10px;
+  font-weight: 300;
+  color: #681010;
+}
+
+.block_wraper.nfo div {
+  margin: 5px 0px;
+}
+
+.match_filters {
+  display: flex;
+  border-bottom: 1px solid #52010c;
+  background: #ffdfe7;
+}
+
+.match_filters .tag {
+  font-weight: 300;
+  margin-bottom: 5px;
+  color: #645f5f;
+}
+
+.match_filters .option {
+  background: #ffffff;
+  padding: 5px 9px;
+  border-radius: 3px;
+  font-size: 13px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.match_filters .option.active {
+  background: #d36262;
+  color: #ffffff;
+}
+
+.match_filters_box {
+  padding: 10px 20px;
+  border-right: 1px solid #5e0101;
+  background: #ffdfdf;
+}
+
+.match_filters .cont {
+  display: flex;
+}
