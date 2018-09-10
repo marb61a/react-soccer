@@ -109,7 +109,7 @@ button {
 }
 
 
-/* HEADER & FOOTER STYLES */
+/* HEADER & FOOTER */
 footer {
   text-align: center;
   font-size: 16px;
@@ -126,7 +126,7 @@ footer .footer_discl {
 }
 
 
-/* FEATURED COMPONENTS STYLING */
+/* FEATURED COMPONENTS */
 .featured_wrapper {
   margin: 0 auto;
   width: 1280px;
@@ -207,7 +207,7 @@ footer .footer_discl {
 }
 
 
-/* MATCHES BLOCK STYLING*/
+/* MATCHES BLOCK */
 .match_block .match_date {
   color: #ffffff;
   font-size: 18px;
@@ -345,7 +345,7 @@ footer .footer_discl {
 }
 
 
-/* MATCHES BLOCK STYLING */
+/* MEET PLAYERS */
 .home_meetplayers {
   background: #ffffff;
 }
@@ -384,3 +384,32 @@ footer .footer_discl {
   background-position: center !important;
   background-size: contain !important;
 }
+
+.player_card_wrapper .player_card_nfo {
+  position: relative;
+}
+
+.player_card_wrapper .player_card_number {
+  color: #fedcd6;
+  font-size: 185px;
+  text-align: right;
+  line-height: 160px;
+}
+
+player_card_wrapper .player_card_name {
+  position: absolute;
+  bottom: 0px;
+}
+
+.player_card_wrapper .player_card_name span { 
+  display: block;
+  font-size: 25px;
+  color: #0d1831;
+}
+
+.home_text_wrapper {
+  margin-top: 70px;
+}
+
+
+/* PROMOTIONS */
