@@ -67,6 +67,14 @@ class Enroll extends Component {
     this.successMessage();
   };
 
+  successMessage() {
+    setTimeout(() => {
+      this.setState({
+        formSuccess: ''
+      })
+    }, 2000);
+  };
+
   submitForm(event) {
     event.preventDefault();
 
