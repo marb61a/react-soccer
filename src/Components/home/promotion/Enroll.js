@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Fade from 'react-reveal/Fade';
+import { firebasePromotions } from '../../../firebase';
 
 import FormField from '../../ui/formFields';
 import { validate } from '../../ui/misc';
@@ -48,6 +49,24 @@ class Enroll extends Component {
     });
   };
 
+  resetFormSuccess(type) {
+    const newFormdata = {...this.state.formdata};
+
+    for(let key in newFormdata){
+      newFormData[key].value = '';
+      newFormdata[key].valid = false;
+      newFormdata[key].validationMessage = '';
+    }
+
+    this.setState({
+      formError: false,
+      formdata: newFormdata,
+      formSuccess: type ? 'Congratulations' : 'Already on the database'
+    });
+
+    this.successMessage();
+  };
+
   submitForm(event) {
     event.preventDefault();
 
@@ -60,7 +79,15 @@ class Enroll extends Component {
     }
 
     if(formIsValid){
-
+      firebasePromotions.orderByChild('email').equalTo(dataToSubmit.email).once("value")
+        .then((snapshot) => {
+          if(snapshot.val === null){
+            firebasePromotions.push(dataToSubmit);
+            this.resetFormSuccess(true);
+          } else {
+            this.resetFormSuccess(false);
+          }
+        })
     } else {
       this.setState({
         formError: true
@@ -72,36 +99,36 @@ class Enroll extends Component {
     return (
       <Fade>
         <div className="enroll_wrapper">
-            <form onSubmit={ (event)=> this.submitForm(event) }>
-              <div className="enroll_title">
-                Enter Your Email
+          <form onSubmit={ (event)=> this.submitForm(event) }>
+            <div className="enroll_title">
+              Enter Your Email
+            </div>
+            <div className="enroll_input">
+              <FormField 
+                id={'email'}
+                formdata={this.state.formdata.email}
+                change={(element)=> this.updateForm(element)}
+              />
+              {
+                this.state.formError ?
+                <div className="error_label">
+                  Something is wrong, try again.
+                </div> :
+                null
+              }
+              <div className="success_label">
+                {this.state.formSuccess}
               </div>
-              <div className="enroll_input">
-                <FormField 
-                  id={'email'}
-                  formdata={this.state.formdata.email}
-                  change={(element)=> this.updateForm(element)}
-                />
-                {
-                  this.state.formError ?
-                  <div className="error_label">
-                    Something is wrong, try again.
-                  </div> :
-                  null
-                }
-                <div className="success_label">
-                  {this.state.formSuccess}
-                </div>
-                <button onClick={(event)=> this.submitForm(event)}>
-                  Enroll
-                </button>
-                <div className="enroll_disc">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                  sed do eiusmod tempor incididunt ut labore et dolore magna 
-                  aliqua.
-                </div>
+              <button onClick={(event)=> this.submitForm(event)}>
+                Enroll
+              </button>
+              <div className="enroll_disc">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                sed do eiusmod tempor incididunt ut labore et dolore magna 
+                aliqua.
               </div>
-            </form>
+            </div>
+          </form>
         </div>
       </Fade>
     );
