@@ -11,21 +11,51 @@ class SignIn extends Component {
     formdata: {
       email: {
         element:'input',
-        value: ''
+        value: '',
+        config: {
+          name:'email_input',
+          type: 'email',
+          placeholder: 'Enter your email'
+        },
+        validation: {
+          required: true,
+          email: true
+        },
+        valid: false,
+        validationMessage: ''
       },
       password: {
         element:'input',
-        value: ''
+        value: '',
+        config:{
+          name:'password_input',
+          type: 'password',
+          placeholder: 'Enter your password'
+        },
+        validation:{
+            required: true
+        },
+        valid: false,
+        validationMessage:''
       }
     }
   };
+
+  submitForm(event) {
+    event.preventDefault();
+
+    let dataToSubmit = {};
+    let formIsValid = true;
+
+  }
 
   render(){
     return (
       <div className="container">
         <div className="signin_wrapper" style={{margin:'100px'}}>
-          <form>
+          <form onSubmit={(event)=> this.submitForm(event)}>
             <h2>Please Login</h2>
+            
           </form>
         </div>
       </div>
