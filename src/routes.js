@@ -18,7 +18,20 @@ const Routes = (props) => {
   return(
     <Layout>
       <Switch>
-        <Route exact component={Home} path="/"/>
+      <PublicRoute 
+        {...props} 
+        restricted={true} 
+        path="/sign_in" 
+        exact 
+        component={SignIn}
+      />
+      <PublicRoute 
+        {...props} 
+        restricted={false} 
+        path="/" 
+        exact 
+        component={Home}
+      />
       </Switch>
     </Layout>
   )
