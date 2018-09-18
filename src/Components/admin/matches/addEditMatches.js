@@ -13,7 +13,35 @@ class AddEditMatch extends Component {
     teams:[],
     formdata: {
       date: {
-
+        element: 'input',
+        value: '',
+        config: {
+          label: 'Event date',
+          name:'date_input',
+          type: 'date'
+        },
+        validation: {
+          required: true
+        },
+        valid: false,
+        validationMessage:'',
+        showlabel: true
+      },
+      local: {
+        element: 'select',
+        value: '',
+        config: {
+          label: 'Select a local team',
+          name:'select_local',
+          type: 'select',
+          options: []
+        },
+        validation: {
+          required: true
+        },
+        valid: false,
+        validationMessage:'',
+        showlabel: false
       }
     }
   }
@@ -23,6 +51,14 @@ class AddEditMatch extends Component {
 
     let dataToSubmit = {};
     let formIsValid = true;
+
+    if(formIsValid) {
+
+    } else {
+      this.setState({
+        formError: true
+      });
+    }
   }
 
   render() {
