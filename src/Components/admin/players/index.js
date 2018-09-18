@@ -41,6 +41,15 @@ class AdminPlayers extends Component {
               </TableBody>
             </Table>
           </Paper>
+          <div className="admin_progress">
+            {
+              this.state.isloading ?
+              <CircularProgress 
+                thickness={7}
+                style={{color:'#98c5e9'}}
+              /> : ''
+            }
+          </div>
         </div>
       </AdminLayout>
     )
