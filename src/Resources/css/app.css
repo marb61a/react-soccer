@@ -445,3 +445,41 @@ player_card_wrapper .player_card_name {
   background-size: contain !important;
 }
 
+
+/* Admin Section*/
+.admin_container {
+  margin-top: 96px;
+  display: flex;
+}
+
+.admin_container .admin_left_nav {
+  min-height: 100vh;
+  background: #282828;
+  border-right: 2px solid #01285e;
+}
+
+.admin_container .admin_right {
+  flex-grow: 1;
+}
+
+.admin_container .admin_progress {
+  text-align: center;
+  margin: 20px 0px;
+}
+
+.admin_container .matches_tag_red {
+  font-weight: 700;
+  color: #F44336;
+}
+
+.admin_container .matches_tag_green {
+  font-weight: 700;
+  color: #4CAF50;
+}
+
+.admin_container h2 {
+  margin: 0px 0px 50px 0px;
+  border-bottom: 1px solid #dbdbdb;
+  color: #414141;
+  font-size: 40px;
+}
