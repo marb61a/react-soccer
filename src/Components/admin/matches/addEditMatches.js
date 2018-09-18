@@ -4,6 +4,11 @@ import AdminLayout from '../../../Hoc/AdminLayout';
 import FormField from '../../ui/formFields';
 import { validate } from '../../ui/misc';
 
+import { 
+  firebaseTeams , firebaseDB, firebaseMatches 
+} from '../../../firebase';
+import { firebaseLooper } from '../../ui/misc';
+
 class AddEditMatch extends Component {
   state = {
     matchId:'',
@@ -42,8 +47,29 @@ class AddEditMatch extends Component {
         valid: false,
         validationMessage:'',
         showlabel: false
+      },
+      resultLocal:{
+        element:'input',
+        value:'',
+        config:{
+            label: 'Result local',
+            name:'result_local_input',
+            type: 'text'
+        },
+        validation:{
+            required: true
+        },
+        valid: false,
+        validationMessage:'',
+        showlabel: false
       }
     }
+  }
+
+  updateForm(element) {
+    const newFormdata = {...this.state.formdata};
+    const newElement = { ...newFormdata[element.id]};
+
   }
 
   submitForm(event) {
@@ -64,11 +90,18 @@ class AddEditMatch extends Component {
   render() {
     return (
       <AdminLayout>
-        <div>
-          <h2>AddEditMatch</h2>
+        <div className="editmatch_dialog_wrapper">
+          <h2>
+            { this.state.formType }
+          </h2>
           <div>
-            <form>
-            
+            <form onSubmit={(event)=> this.submitForm(event)}>
+              <FormField 
+                id={'date'}
+                formdata={this.state.formdata.date}
+                change={(element)=> this.updateForm(element)}
+              />
+              
             </form>
           </div>
         </div>
