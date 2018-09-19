@@ -72,6 +72,18 @@ class AddEditMatch extends Component {
 
   }
 
+  successForm(message){
+    this.setState({
+      formSuccess: message
+    });
+
+    setTimeout(() => {
+      this.setState({
+        formSuccess: ''
+      });
+    }, 2000);
+  }
+
   submitForm(event) {
     event.preventDefault();
 
@@ -101,7 +113,25 @@ class AddEditMatch extends Component {
                 formdata={this.state.formdata.date}
                 change={(element)=> this.updateForm(element)}
               />
-              
+              <div className="select_team_layout">
+                <div className="label_inputs">Local</div>
+                <div className="wrapper">
+                  <div className="left">
+                    <FormField 
+                      id={'local'}
+                      formdata={this.state.formdata.local}
+                      change={(element)=> this.updateForm(element)}
+                    />
+                  </div>
+                  <div>
+                    <FormField
+                      id={'resultLocal'}
+                      formdata={this.state.formdata.resultLocal}
+                      change={(element)=> this.updateForm(element)}
+                    />
+                  </div>
+                </div>
+              </div>
             </form>
           </div>
         </div>
