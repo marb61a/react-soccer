@@ -78,6 +78,51 @@ class AddEditMatch extends Component {
         valid: false,
         validationMessage:'',
         showlabel: false
+      },
+      resultAway: {
+        element: 'input',
+        value: '',
+        config: {
+          label: 'Result local',
+          name:'result_local_input',
+          type: 'text'
+        },
+        validation: {
+          required: true
+        },
+        valid: false,
+        validationMessage:'',
+        showlabel: false
+      },
+      referee: {
+        element: 'input',
+        value: '',
+        config: {
+          label: 'Referee',
+          name:'referee_input',
+          type: 'text'
+        },
+        validation: {
+          required: true
+        },
+        valid: false,
+        validationMessage:'',
+        showlabel: true
+      },
+      stadium: {
+        element: 'input',
+        value: '',
+        config: {
+          label: 'Stadium',
+          name:'stadium_input',
+          type: 'text'
+        },
+        validation: {
+          required: true
+        },
+        valid: false,
+        validationMessage:'',
+        showlabel: true
       }
     }
   }
@@ -234,7 +279,7 @@ class AddEditMatch extends Component {
                   change={(element) => this.updateForm(element)}
                 />
               </div>
-              
+
             </form>
           </div>
         </div>
