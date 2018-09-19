@@ -80,6 +80,42 @@ class AddEditPlayers extends Component {
     }
   };
 
+  updateFields = (player, playerId, formType) => {
+    const newFormdata = { ...this.state.formdata};
+
+    for(let key in newFormdata) {
+      newFormdata[key].value = match[key];
+      newFormdata[key].valid = true;
+    }
+
+    this.setState({
+      playerId,
+      formType,
+      formdata: newFormdata,
+    })
+  }
+
+  updateForm(element, content = '') {
+    const newFormdata = {...this.state.formdata};
+    const newElement = { ...newFormdata[element.id]};
+
+    if(content === '') {
+      newElement.value = element.event.target.value;      
+    } else {
+      newElement.value = content;
+    }
+
+    let validData = validate(newElement);
+    newElement.valid = validData[0];
+    newElement.validationMessage = validData[1];
+    newFormdata[element.id] = newElement;
+
+    this.setState({
+      formError: false,
+      formdata: newFormdata
+    });
+  }
+
   successForm(message) {
     this.setState({
       formSuccess: message
