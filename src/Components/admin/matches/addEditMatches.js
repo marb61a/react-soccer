@@ -203,6 +203,38 @@ class AddEditMatch extends Component {
                   </div>
                 </div>
               </div>
+              <div className="select_team_layout">
+                <div className="label_inputs">Away</div>
+                <div className="wrapper">
+                  <div className="left">
+                    <FormField 
+                      id={'away'}
+                      formdata={this.state.formdata.away}
+                      change={(element) => this.updateForm(element)}
+                    />
+                  </div>
+                  <div>
+                    <FormField 
+                      id={'resultAway'}
+                      formdata={this.state.formdata.resultAway}
+                      change={(element) => this.updateForm(element)}
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="split_fields">
+                <FormField 
+                  id={'referee'}
+                  formdata={this.state.formdata.referee}
+                  change={(element) => this.updateForm(element)}
+                />
+                <FormField
+                  id={'stadium'}
+                  formdata={this.state.formdata.stadium}
+                  change={(element) => this.updateForm(element)}
+                />
+              </div>
+              
             </form>
           </div>
         </div>
