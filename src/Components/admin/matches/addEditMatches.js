@@ -86,9 +86,44 @@ class AddEditMatch extends Component {
     const newFormdata = {...this.state.formdata};
     const newElement = { ...newFormdata[element.id]};
 
+    newElement.value = element.event.target.value;
+
+    let validData = validate(newElement);
+    newElement.valid = validData[0];
+    newElement.validationMessage = validData[1];
+    newFormdata[element.id] = newElement;
+
+    this.setState({
+      formError: false,
+      formdata: newFormdata
+    });
   }
 
-  successForm(message){
+  updateFields(match, teamOptions, teams, type, matchId) {
+    const newFormdata = {
+      ...this.state.formdata
+    };
+
+    for(let key in newFormdata) {
+      if(match) {
+        newFormdata[key].value = match[key];
+        newFormdata[key].valid = true;
+      }
+
+      if(key === 'local' || key === 'away') {
+        newFormdata[key].config.options = teamOptions;
+      }
+
+      this.setState({
+        matchId,
+        formType:type,
+        formdata: newFormdata,
+        teams
+      })
+    }
+  }
+
+  successForm(message) {
     this.setState({
       formSuccess: message
     });
@@ -125,7 +160,7 @@ class AddEditMatch extends Component {
       if(this.state.formType === 'Edit Match'){
 
       } else {
-        
+
       }
 
     } else {
