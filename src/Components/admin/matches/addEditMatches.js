@@ -62,6 +62,22 @@ class AddEditMatch extends Component {
         valid: false,
         validationMessage:'',
         showlabel: false
+      },
+      away: {
+        element: 'select',
+        value: '',
+        config: {
+          label: 'Select a local team',
+          name:'select_local',
+          type: 'select',
+          options: []
+        },
+        validation: {
+          required: true
+        },
+        valid: false,
+        validationMessage:'',
+        showlabel: false
       }
     }
   }
@@ -90,7 +106,27 @@ class AddEditMatch extends Component {
     let dataToSubmit = {};
     let formIsValid = true;
 
+    for(let key in this.state.formdata) {
+      dataToSubmit[key] = this.state.formdata[key].value;
+      formIsValid = this.state.formdata[key].valid && formIsValid;
+    };
+
+    this.state.teams.forEach((team) => {
+      if(team.shortName === dataToSubmit.local) {
+        dataToSubmit['localThmb'] =  team.thmb;
+      }
+
+      if(team.shortName === dataToSubmit.away) {
+        dataToSubmit['awayThmb'] =  team.thmb;
+      }
+    });
+
     if(formIsValid) {
+      if(this.state.formType === 'Edit Match'){
+
+      } else {
+        
+      }
 
     } else {
       this.setState({
