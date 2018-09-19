@@ -56,14 +56,52 @@ class AddEditPlayers extends Component {
         validationMessage:'',
         showlabel: true
       },
+      position: {
+        element: 'select',
+        value: '',
+        config: {
+          label: 'Select a position',
+          name: 'select_position',
+          type: 'select',
+          options: [
+            {key:"Keeper",value:"Keeper"},
+            {key:"Defence",value:"Defence"},
+            {key:"Midfield",value:"Midfield"},
+            {key:"Striker",value:"Striker"}
+          ]
+        },
+        validation: {
+          required: true
+        },
+        valid: false,
+        validationMessage:'',
+        showlabel: true
+      }
     }
   };
+
+  successForm(message) {
+    this.setState({
+      formSuccess: message
+    });
+
+    setTimeout(() => {
+      this.setState({
+        formSuccess: ''
+      });
+    }, 2000);
+  }
 
   submitForm(event) {
     event.preventDefault();
     
     let dataToSubmit = {};
     let formIsValid = true;
+
+    for(let key in this.state.formdata) {
+      dataToSubmit[key] = this.state.formdata[key].value;
+      formIsValid = this.state.formdata[key].valid && formIsValid;
+    };
 
     if(formIsValid) {
 
