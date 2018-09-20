@@ -144,6 +144,25 @@ class AddEditMatch extends Component {
         valid: false,
         validationMessage:'',
         showlabel: true
+      },
+      final: {
+        element: 'select',
+        value: '',
+        config: {
+          label: 'Game played ?',
+          name:'select_played',
+          type: 'select',
+          options: [
+              {key:'Yes',value:'Yes'},
+              {key:'No',value:'No'}
+          ]
+        },
+        validation: {
+          required: true
+        },
+        valid: false,
+        validationMessage:'',
+        showlabel: true
       }
     }
   }
@@ -315,7 +334,18 @@ class AddEditMatch extends Component {
               <div className="success_label">
                 { this.state.formSuccess }
               </div>
-              
+              {
+                this.state.formError ?
+                <div className="error_label">
+                  An error has occurred
+                </div> :
+                '' 
+              }
+              <div className="admin_submit">
+                <button onClick={(event)=> this.submitForm(event)}>
+                  {this.state.formType}
+                </button>
+              </div>
             </form>
           </div>
         </div>
