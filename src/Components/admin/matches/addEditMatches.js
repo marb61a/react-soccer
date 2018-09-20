@@ -123,6 +123,27 @@ class AddEditMatch extends Component {
         valid: false,
         validationMessage:'',
         showlabel: true
+      },
+      result: {
+        element: 'select',
+        value: '',
+        config: {
+          label: 'Team result',
+          name: 'select_result',
+          type: 'select',
+          options: [
+            {key:'W',value:'W'},
+            {key:'L',value:'L'},
+            {key:'D',value:'D'},
+            {key:'n/a',value:'n/a'}
+          ]
+        },
+        validation: {
+          required: true
+        },
+        valid: false,
+        validationMessage:'',
+        showlabel: true
       }
     }
   }
@@ -279,7 +300,22 @@ class AddEditMatch extends Component {
                   change={(element) => this.updateForm(element)}
                 />
               </div>
-
+              <div className="split_fields last">
+                <FormField
+                  id={'result'}
+                  formdata={this.state.formdata.result}
+                  change={(element) => this.updateForm(element)}
+                />
+                <FormField
+                  id={'final'}
+                  formdata={this.state.formdata.final}
+                  change={(element) => this.updateForm(element)}
+                />
+              </div>
+              <div className="success_label">
+                { this.state.formSuccess }
+              </div>
+              
             </form>
           </div>
         </div>
