@@ -14,12 +14,20 @@ import { firebaseLooper, reverseArray } from '../../ui/misc';
 
 class AdminPlayers extends Component {
   state = {
-    isLoading: true,
+    isloading: true,
     players: []
   };
 
   componentDidMount(){
+    firebasePlayers.once('value')
+      .then((snapshot) => {
+        const players = firebaseLooper(snapshot);
 
+        this.setState({
+          isloading: false,
+          players: reverseArray(players)
+        });
+      });
   }
 
   render(){
@@ -37,7 +45,17 @@ class AdminPlayers extends Component {
                 </TableRow>
               </TableHead>
               <TableBody>
-              
+                {
+                  this.state.players ? 
+                  this.state.players.map((player, i) => (
+                    <TableRow key={i}>
+                      <TableCell>
+                      
+                      </TableCell>
+                    </TableRow>
+                  )) :
+                  null
+                }
               </TableBody>
             </Table>
           </Paper>

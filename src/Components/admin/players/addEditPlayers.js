@@ -241,6 +241,20 @@ class AddEditPlayers extends Component {
               <div className="success_label">
                 { this.state.formSuccess }
               </div>
+              {
+                this.state.formError ?
+                <div className="error_label">
+                  An error has occurred
+                </div> :
+                ''
+              }
+              <div className="admin_submit">
+                <button
+                  onClick={(event)=> this.submitForm(event)}
+                >
+                  { this.state.formType }
+                </button>
+              </div>
             </form>
           </div>
         </div>
