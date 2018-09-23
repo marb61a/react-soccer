@@ -4,6 +4,9 @@ import AdminLayout from '../../../Hoc/AdminLayout';
 import FormField from '../../ui/formFields';
 import { validate } from '../../ui/misc';
 
+import Fileuploader from '../../ui/fileuploader';
+import { firebasePlayers , firebaseDB, firebase } from '../../../firebase';
+
 class AddEditPlayers extends Component {
   state = {
     playerId:'',
@@ -76,11 +79,19 @@ class AddEditPlayers extends Component {
         valid: false,
         validationMessage:'',
         showlabel: true
+      },
+      image: {
+        element: 'image',
+        value: '',
+        validation: {
+          required: true
+        },
+        valid: false
       }
     }
   };
 
-  updateFields = (player, playerId, formType) => {
+  updateFields = (player, playerId, formType, defaultImg) => {
     const newFormdata = { ...this.state.formdata};
 
     for(let key in newFormdata) {
@@ -90,9 +101,22 @@ class AddEditPlayers extends Component {
 
     this.setState({
       playerId,
+      defaultImg,
       formType,
       formdata: newFormdata,
     })
+  }
+
+  componentDidMount() {
+    const playerId = this.props.match.params.id;
+
+    if(!playerId) {
+      this.setState({
+        formType:'Add player'
+      });
+    } else {
+
+    }
   }
 
   updateForm(element, content = '') {

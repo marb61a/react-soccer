@@ -98,8 +98,20 @@ class Fileuploader extends Component {
         }
         {
           this.state.fileURL ?
-          <div>
-          
+          <div className="image_upload_container">
+            <img 
+              style={{
+                width:'100%'
+              }}
+              src={this.state.fileURL}
+              alt={this.state.name}
+            />
+            <div
+              className="remove"
+              onClick={() => this.uploadAgain()}
+            >
+              Remove
+            </div>
           </div> :
           null
         }
