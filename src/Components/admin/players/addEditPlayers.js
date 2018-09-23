@@ -115,7 +115,23 @@ class AddEditPlayers extends Component {
         formType:'Add player'
       });
     } else {
+      firebaseDB.ref(`players/${playerId}`)
+        .once('value')
+        .then(snapshot => {
+          const playerData = snapshot.val();
 
+          firebase.storage().ref('players')
+            .child(playerData.image).getDownloadURL()
+            .then(url => {
+              this.updateFields(playerData, playerId, 'Edit player', url);
+            })
+            .catch(e => {
+              this.updateFields({
+                ...playerData,
+                image: ''
+              }, playerId, 'Edit Player', '');
+            });
+        })
     }
   }
 
@@ -164,7 +180,28 @@ class AddEditPlayers extends Component {
     };
 
     if(formIsValid) {
-
+      if(this.state.formType === 'Edit Player') {
+        firebaseDB.ref(`players/${this.state.playerId}`)
+          .update(dataToSubmit)
+          .then(() => {
+            this.successForm('Update correctly');
+          })
+          .catch(e => {
+            this.setState({
+              formError: true
+            });
+          })
+      } else {
+        firebasePlayers.push(dataToSubmit)
+          .then(()=>{
+            this.props.history.push('/admin_players');
+          })
+          .catch(e => {
+            this.setState({
+              formError: true
+            });
+          })
+      }
     } else {
       this.setState({
         formError: true
