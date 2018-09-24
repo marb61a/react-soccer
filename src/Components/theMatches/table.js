@@ -25,12 +25,23 @@ class LeagueTable extends Component {
 
   componentDidMount(){
     firebaseDB.ref('positions').once('value')
-      .then()
+      .then(snapshot => {
+
+      });
   }
 
   render() {
     return (
-      <div></div>
+      <div className="league_table_wrapper">
+        <div className="title">
+          League Table
+        </div>
+        <div style={{background: '#98c6e9'}}>
+          <Table>
+          
+          </Table>
+        </div>
+      </div>
     );
   }
 }
