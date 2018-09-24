@@ -208,6 +208,38 @@ class AddEditMatch extends Component {
     }
   }
 
+  componentDidMount(){
+    const matchId = this.props.match.params.id;
+
+    const getTeams = (match, type) => {
+      firebaseTeams.once('value')
+        .then(snapshot => {
+          const teams = firebaseLooper(snapshot);
+          const teamOptions = [];
+
+          snapshot.forEach((childSnapshot) => {
+            teamOptions.push({
+              key: childSnapshot.val().shortName,
+              value: childSnapshot.val().shortName
+            });
+          });
+
+          this.updateFields(match, teamOptions, teams, type, matchId);
+        })
+    };
+
+    if(!matchId) {
+      getTeams(false, 'Add Match');
+    } else {
+      firebaseDB.ref(`matches/${matchId}`)
+        .once('value')
+        .then(snapshot => {
+          const match = snapshot.val();
+          getTeams(match, 'Edit Match')
+        });
+    }
+  }
+
   successForm(message) {
     this.setState({
       formSuccess: message
