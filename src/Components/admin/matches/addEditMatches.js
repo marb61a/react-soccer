@@ -274,10 +274,27 @@ class AddEditMatch extends Component {
     });
 
     if(formIsValid) {
-      if(this.state.formType === 'Edit Match'){
-
+      if(this.state.formType === 'Edit Match') {
+        firebaseDB.ref(`matches/${this.state.matchId}`)
+          .update(dataToSubmit)
+          .then(() => {
+            this.successForm('Updated correctly');
+          })
+          .catch(e => {
+            this.setState({
+              formError: true
+            });
+          });
       } else {
-
+        firebaseMatches.push(dataToSubmit)
+          .then(() => {
+            this.props.history.push('/admin_matches');
+          })
+          .catch(e => {
+            this.setState({
+              formError: true
+            });
+          });
       }
 
     } else {

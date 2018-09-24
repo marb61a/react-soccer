@@ -20,7 +20,15 @@ class AdminMatches extends Component {
   };
 
   componentDidMount(){
-    
+    firebaseMatches.once('value')
+      .then(snapshot => {
+        const matches = firebaseLooper(snapshot);
+
+        this.setState({
+          isloading: false,
+          matches:reverseArray(matches)
+        });
+      });
   }
 
   render(){
@@ -37,7 +45,11 @@ class AdminMatches extends Component {
                   <TableCell>Final</TableCell>
                 </TableRow>
               </TableHead>
-              <TableBody></TableBody>
+              <TableBody>
+                {
+                  
+                }
+              </TableBody>
             </Table>
           </Paper>
           <div className="admin_progress">
