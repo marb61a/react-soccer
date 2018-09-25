@@ -45,9 +45,20 @@ class TheTeam extends Component {
 
   showPlayersByCategory = (category) => (
     this.state.players ?
-    this.state.players.map(
-      
-    ) :
+    this.state.players.map((player, i) =>  {
+      return player.position === category ?
+      <Fade left delay={i*20} key={i}>
+        <div className="item">
+          <PlayerCard 
+            number={player.number}
+            name={player.name}
+            lastname={player.lastname}
+            bck={player.url}
+          />
+        </div>
+      </Fade> :
+      null
+    }) :
     null
   )
 
@@ -60,7 +71,30 @@ class TheTeam extends Component {
         {
           this.state.loading ?
           <div>
-          
+            <div className="team_category_wrapper">
+              <div className="title">Keepers</div>
+              <div className="team_cards">
+                { this.showPlayersByCategory('Keeper') }
+              </div>
+            </div>
+            <div className="team_category_wrapper">
+              <div className="title">Defence</div>
+              <div className="team_cards">
+                {this.showplayersByCategory('Defence')}
+              </div>
+            </div>
+            <div className="team_category_wrapper">
+              <div className="title">Midfield</div>
+              <div className="team_cards">
+                {this.showplayersByCategory('Midfield')}
+              </div>
+            </div>
+            <div className="team_category_wrapper">
+              <div className="title">Strikers</div>
+              <div className="team_cards">
+                {this.showplayersByCategory('Striker')}
+              </div>
+            </div>
           </div> :
           null
         }
