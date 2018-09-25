@@ -34,6 +34,21 @@ class LeagueTable extends Component {
       });
   }
 
+  showTeampositions = (pos) => (
+    pos ?
+    pos.map((pos, i) => (
+      <TableRow key={i}>
+        <TableCell style={style.cell}>{i+1}</TableCell>
+        <TableCell style={style.cell}>{pos.team}</TableCell>
+        <TableCell numeric style={style.cell}>{pos.w}</TableCell>
+        <TableCell numeric style={style.cell}>{pos.d}</TableCell>
+        <TableCell numeric style={style.cell}>{pos.l}</TableCell>
+        <TableCell numeric style={style.cell}>{pos.pts}</TableCell>
+      </TableRow>
+    )) :
+    null
+  )
+
   render() {
     return (
       <div className="league_table_wrapper">
@@ -42,7 +57,19 @@ class LeagueTable extends Component {
         </div>
         <div style={{background: '#98c6e9'}}>
           <Table>
-          
+            <TableHead>
+              <TableRow>
+                <TableCell style={style.cell}>{i+1}</TableCell>
+                <TableCell style={style.cell}>{pos.team}</TableCell>
+                <TableCell numeric style={style.cell}>{pos.w}</TableCell>
+                <TableCell numeric style={style.cell}>{pos.d}</TableCell>
+                <TableCell numeric style={style.cell}>{pos.l}</TableCell>
+                <TableCell numeric style={style.cell}>{pos.pts}</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              { this.showTeampositions(this.state.positions) }
+            </TableBody>
           </Table>
         </div>
       </div>
