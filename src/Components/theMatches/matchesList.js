@@ -15,8 +15,35 @@ class MatchesList extends Component {
 
   showMatches = () => (
     this.state.matcheslist ?
-    <NodeGroup>
-    
+    <NodeGroup
+      data={this.state.matchesList}
+      keyAccessor={(d) => d.id}
+      start={() => ({
+        opacity: 0,
+        x: -200
+      })}
+
+    >
+      {(nodes) => (
+        <div>
+          {nodes.map(({key, data, state:{ x, opacity}}) => (
+            <div
+              key={key}
+              className="match_box_big"
+              style={{
+                opacity,
+                transform: `translate(${x}px)`
+              }}
+            >
+              <div className="block_wrapper">
+                <div className="block">
+                
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
     </NodeGroup> :
     null
   )
