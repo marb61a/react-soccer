@@ -102,10 +102,24 @@ class TheMatches extends Component {
                   >
                     W
                   </div>
-                  
+                  <div 
+                    className={`option ${state.resultFilter === 'L' ? 'active' : ''}`}
+                    onClick={()=> this.showResult('L')}
+                  >
+                    L
+                  </div>
+                  <div 
+                    className={`option ${state.resultFilter === 'D' ? 'active' : ''}`}
+                    onClick={()=> this.showResult('D')}>
+                    D
+                  </div>
                 </div>
               </div>
             </div>
+            <MatchesList matches={state.filterMatches}/>
+          </div>
+          <div className="right">
+            <LeagueTable />
           </div>
         </div>
       </div>

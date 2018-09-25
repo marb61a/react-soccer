@@ -12,6 +12,24 @@ class MatchesList extends Component {
       matcheslist: props.matches
     };
   }
+
+  showMatches = () => (
+    this.state.matcheslist ?
+    <NodeGroup>
+    
+    </NodeGroup> :
+    null
+  )
+
+  render() {
+    console.log(this.state.matcheslist);
+
+    return (
+      <div>
+        { this.showMatches() }
+      </div>
+    );
+  }
 }
 
 export default MatchesList;
