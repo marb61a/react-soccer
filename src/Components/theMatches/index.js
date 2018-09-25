@@ -66,14 +66,43 @@ class TheMatches extends Component {
                 </div>
                 <div className="cont">
                   <div
-                    className={`option ${state.playedFilter === 'All' ? 'active': ''}`}
+                    className={`option ${state.playedFilter === 'All' ? 'active' : ''}`}
                     onClick={() => this.showPlayed('All')}
                   >
                     All
                   </div>
-                  <div>
-                  
+                  <div
+                    className={`option ${state.playedFilter === 'Yes' ?' active' : ''}`}
+                    onClick={() => this.showPlayed('Yes')}
+                  >
+                    Played
                   </div>
+                  <div 
+                    className={`option ${state.playedFilter === 'No'?'active':''}`}
+                    onClick={()=> this.showPlayed('No')}
+                  >
+                    Not played
+                  </div>
+                </div>
+              </div>
+              <div className="match_filters_box">
+                <div className="tag">
+                  Result
+                </div>
+                <div className="cont">
+                  <div
+                    className={`option ${state.resultFilter === 'All' ? 'active' : ''}`}
+                    onClick={() => this.showResult('All')}
+                  >
+                    All
+                  </div>
+                  <div
+                    className={`option ${state.resultFilter === 'W' ? 'active' : ''}`}
+                    onClick={() => this.showResult('W')}
+                  >
+                    W
+                  </div>
+                  
                 </div>
               </div>
             </div>
