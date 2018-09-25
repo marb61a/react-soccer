@@ -27,6 +27,16 @@ class MatchesList extends Component {
         x: [0],
         timing:{duration: 500, delay: i * 50, ease: easePolyOut}
       })}
+      update={(d, i) => ({
+        opacity: [1],
+        x: [0],
+        timing:{duration: 500, delay: i * 50, ease: easePolyOut}
+      })}
+      leave={(d, i) => ({
+        opacity: [1],
+        x: [-200],
+        timing:{duration: 500, delay: i * 50, ease: easePolyOut}
+      })}
     >
       {(nodes) => (
         <div>
@@ -69,6 +79,17 @@ class MatchesList extends Component {
                   <div className="result">
                     { data.resultAway }
                   </div>
+                </div>
+              </div>
+              <div className="block_wraper nfo">
+                <div>
+                  <strong>Date:</strong> {data.date}
+                </div>
+                <div>
+                  <strong>Stadium:</strong> {data.stadium}
+                </div>
+                <div>
+                  <strong>Referee:</strong> {data.referee}
                 </div>
               </div>
             </div>

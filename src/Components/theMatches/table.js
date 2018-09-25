@@ -26,7 +26,11 @@ class LeagueTable extends Component {
   componentDidMount(){
     firebaseDB.ref('positions').once('value')
       .then(snapshot => {
+        const positions = firebaseLooper(snapshot);
 
+        this.setState({
+          positions: positions
+        });
       });
   }
 
