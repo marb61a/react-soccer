@@ -393,6 +393,7 @@ footer .footer_discl {
   min-height: 390px;
 }
 
+
 /* PLAYER CARDS */
 .player_card_wrapper {
   background: #ffffff;
@@ -469,6 +470,30 @@ player_card_wrapper .player_card_name {
   width: 280px;
   height: 280px;
   background-size: contain !important;
+}
+
+.promotion_wrapper .enroll_wrapper {
+  text-align: center;
+}
+
+.promotion_wrapper .enroll_title {
+  font-family: 'Righteous', cursive;
+  font-size: 26px;
+  color: #4e4e4e;
+}
+
+.promotion_wrapper .enroll_discl {
+  font-weight: 300;
+  font-size: 12px;
+  width: 271px;
+  margin: 0 auto;
+  padding: 10px 0px;
+}
+
+.promotion_wrapper .enroll_input {
+  width: 330px;
+  margin: 0 auto;
+  padding: 10px 0px;
 }
 
 
