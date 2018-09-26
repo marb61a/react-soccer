@@ -108,6 +108,32 @@ button {
   text-align: center;
 }
 
+.image_upload_container {
+  position: relative;
+}
+
+.image_upload_container .remove {
+  top: 0;
+  position: absolute;
+  right: 0;
+  background: #98c6e9;
+  color: #ffffff;
+  border: 1px solid white;
+  padding: 10px;
+}
+
+.not_found_container {
+  text-align: center;
+  margin-top: 96px;
+  padding: 20px;
+  background-size: 5px 5px !important;
+  min-height: 100vh;
+  text-align: center;
+  font-size: 90px;
+  font-family: 'Righteous', cursive;
+  color: #d5ebfe;
+}
+
 
 /* HEADER & FOOTER */
 footer {
@@ -464,15 +490,15 @@ player_card_wrapper .player_card_name {
 }
 
 .league_table_wrapper {
-   border-left: 1px solid #98c6e9;
+   border-left: 1px solid #F44336;
 }
 
 .league_table_wrapper .title {
   padding: 22px;
   font-size: 22px;
   color: #ffffff;
-    background: #98c6e9;
-    border-bottom: 1px solid #01285e;
+  background: #F44336;
+  border-bottom: 1px solid rgb(94, 1, 32);
 }
 
 .the_matches_wrapper .progress {
