@@ -209,6 +209,21 @@ class AddEditPlayers extends Component {
     }
   }
 
+  resetImage = () => {
+    const newFormdata = {...this.state.formdata};
+    newFormdata['image'].value = '';
+    newFormdata['image'].valid = false;
+    
+    this.setState({
+      defaultImg:'',
+      formdata: newFormdata
+    });
+  }
+
+  storeFilename = (filename) => {
+    this.updateForm({id:'image'},filename);
+  }
+
   render(){
     return (
       <AdminLayout>
@@ -218,6 +233,14 @@ class AddEditPlayers extends Component {
           </h2>
           <div>
             <form onSubmit={(event)=> this.submitForm(event)}>
+              <Fileuploader 
+                dir="players"
+                tag={"Player image"}
+                defaultImg={this.state.defaultImg}
+                defaultImgName={this.state.formdata.image.value}
+                resetImage={()=> this.resetImage()}
+                filename={(filename)=> this.storeFilename(filename)}
+              />
               <FormField 
                 id={'name'}
                 formdata={this.state.formdata.name}
