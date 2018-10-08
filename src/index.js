@@ -1,16 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './Resources/css/app.css';
-
 import { BrowserRouter } from 'react-router-dom';
+
+import './Resources/css/app.css';
 import Routes from './routes';
 import { firebase } from './firebase';
 
-const App = () => {
+const App = (props) => {
   return (
     <BrowserRouter>
       <Routes
-        { ...props }
+        {...props}
       />
     </BrowserRouter>
   )

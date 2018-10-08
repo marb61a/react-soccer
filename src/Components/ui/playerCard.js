@@ -21,4 +21,4 @@ const PlayerCard = (props) => {
   );
 };
 
-export const PlayerCard;
+export default PlayerCard;
