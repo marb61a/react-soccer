@@ -29,7 +29,7 @@ class Enroll extends Component {
   };
 
   updateForm(element) {
-    const newFormData = {
+    const newFormdata = {
       ...this.state.formdata
     };
     const newElement = {
@@ -42,7 +42,7 @@ class Enroll extends Component {
     newElement.valid = validData[0];
     newElement.validationMessage = validData[1]
 
-    newFormData[element.id] = newElement;
+    newFormdata[element.id] = newElement;
     this.setState({
       formError: false,
       formdata: newFormdata
@@ -53,7 +53,7 @@ class Enroll extends Component {
     const newFormdata = {...this.state.formdata};
 
     for(let key in newFormdata){
-      newFormData[key].value = '';
+      newFormdata[key].value = '';
       newFormdata[key].valid = false;
       newFormdata[key].validationMessage = '';
     }

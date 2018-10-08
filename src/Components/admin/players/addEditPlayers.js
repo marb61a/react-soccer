@@ -95,7 +95,7 @@ class AddEditPlayers extends Component {
     const newFormdata = { ...this.state.formdata};
 
     for(let key in newFormdata) {
-      newFormdata[key].value = match[key];
+      newFormdata[key].value = player[key];
       newFormdata[key].valid = true;
     }
 

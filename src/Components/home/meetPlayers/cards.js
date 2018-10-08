@@ -28,7 +28,7 @@ class HomeCards extends Component {
   };
 
   showAnimateCards = () => (
-    this.state.cards.map((card) => (
+    this.state.cards.map((card, i) => (
       <Animate
         key={i}
         show={this.props.show}
