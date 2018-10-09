@@ -10,7 +10,7 @@ import Paper from '@material-ui/core/Paper';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 import { firebaseMatches } from '../../../firebase';
-import { firebaseLooper, reverseArray } from '../../ui/misc';
+import { firebaseLooper, reversedArray } from '../../ui/misc';
 import AdminLayout from '../../../Hoc/AdminLayout';
 
 class AdminMatches extends Component {
@@ -26,7 +26,7 @@ class AdminMatches extends Component {
 
         this.setState({
           isloading: false,
-          matches:reverseArray(matches)
+          matches: reversedArray(matches)
         });
       });
   }

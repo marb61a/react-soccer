@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Slide from 'react-reveal/Slide';
 
 import { firebaseMatches } from '../../../firebase';
-import { firebaseLooper, reverseArray } from '../../ui/misc';
+import { firebaseLooper, reversedArray } from '../../ui/misc';
 import MatchesBlock from '../../ui/matches_block';
 
 class Blocks extends Component {
@@ -16,7 +16,7 @@ class Blocks extends Component {
         const matches = firebaseLooper(snapshot);
 
         this.setState({
-          matches: reverseArray(matches)
+          matches: reversedArray(matches)
         });
     })
   }

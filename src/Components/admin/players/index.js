@@ -10,7 +10,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 
 import AdminLayout from '../../../Hoc/AdminLayout';
 import { firebasePlayers } from '../../../firebase';
-import { firebaseLooper, reverseArray } from '../../ui/misc';
+import { firebaseLooper, reversedArray } from '../../ui/misc';
 
 class AdminPlayers extends Component {
   state = {
@@ -25,7 +25,7 @@ class AdminPlayers extends Component {
 
         this.setState({
           isloading: false,
-          players: reverseArray(players)
+          players: reversedArray(players)
         });
       });
   }

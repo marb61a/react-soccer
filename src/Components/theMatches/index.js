@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 import { firebaseMatches } from '../../firebase';
-import { firebaseLooper, reverseArray } from '../ui/misc';
+import { firebaseLooper, reversedArray } from '../ui/misc';
 
 import LeagueTable from './table';
 import MatchesList from './matchesList';
@@ -22,8 +22,8 @@ class TheMatches extends Component {
 
         this.setState({
           loading: false,
-          matches: reverseArray(matches),
-          filterMatches: reverseArray(matches)
+          matches: reversedArray(matches),
+          filterMatches: reversedArray(matches)
         });
       });
   }
